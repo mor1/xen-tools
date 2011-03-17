@@ -4026,13 +4026,13 @@ sub setupRootPassword
             #
             #  Generate a password, salt and use that to generating a hash
             #
-            if ( $CONFIG{ 'genpass' } )
+            if ( $CONFIG{ 'password' } )
             {
-                $PASSWORD = generatePassword( $CONFIG{ 'genpass_len' } );
+                $PASSWORD = $CONFIG { 'password' };
             }
             else
             {
-                $PASSWORD = $CONFIG { 'password' };
+                $PASSWORD = generatePassword( $CONFIG{ 'genpass_len' } );
             }
 
             my $salt = generatePassword(8);
